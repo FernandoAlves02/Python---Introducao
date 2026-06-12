@@ -1,5 +1,23 @@
-valor1 = int(input("Digite o primeiro valor: "))
-valor2 = int(input("Digite o segundo valor: "))
+while True:
+    try:
+        valor1 = int(input("Digite o primeiro valor: "))
+        break
+    except ValueError:
+        print("Valor inválido! Por favor, digite um número inteiro.")
+    except KeyboardInterrupt:
+        print("\nOperação cancelada pelo usuário.")
+        exit(1)
+
+while True:
+    try:
+        valor2 = int(input("Digite o segundo valor: "))
+        break
+    except ValueError:
+        print("Valor inválido! Por favor, digite um número inteiro.")
+    except KeyboardInterrupt:
+        print("\nOperação cancelada pelo usuário.")
+        exit(1)
+
 print("Selecione uma opção: ")
 print("1 - Adição")
 print("2 - Subtração")
