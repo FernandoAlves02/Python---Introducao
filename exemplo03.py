@@ -18,4 +18,5 @@ match opcao:
         resultado = valor1 / valor2
     case _:
         print("Opção inválida!")
-print("Resultado: ", resultado)
+if resultado is not None:
+    print("Resultado: ", resultado)
