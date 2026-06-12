@@ -7,6 +7,7 @@ print("3 - Multiplicação")
 print("4 - Divisão")
 opcao = int(input("Digite a opção desejada: "))
 
+resultado = None
 match opcao:
     case 1:
         resultado = valor1 + valor2
