@@ -18,12 +18,20 @@ while True:
         print("\nOperação cancelada pelo usuário.")
         exit(1)
 
-print("Selecione uma opção: ")
-print("1 - Adição")
-print("2 - Subtração")
-print("3 - Multiplicação")
-print("4 - Divisão")
-opcao = int(input("Digite a opção desejada: "))
+while True:
+    print("Selecione uma opção: ")
+    print("1 - Adição")
+    print("2 - Subtração")
+    print("3 - Multiplicação")
+    print("4 - Divisão")
+    try:
+        opcao = int(input("Digite a opção desejada: "))
+        break
+    except ValueError:
+        print("Opção inválida! Por favor, digite um número inteiro.")
+    except KeyboardInterrupt:
+        print("\nOperação cancelada pelo usuário.")
+        exit(1)
 
 resultado = None
 match opcao:
@@ -34,7 +42,10 @@ match opcao:
     case 3:
         resultado = valor1 * valor2
     case 4:
-        resultado = valor1 / valor2
+        try:
+            resultado = valor1 / valor2
+        except ZeroDivisionError:
+            print("Erro: Divisão por zero não é permitida!")
     case _:
         print("Opção inválida!")
 if resultado is not None:
